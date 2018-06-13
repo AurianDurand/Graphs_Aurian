@@ -15,59 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-              <folding>
-                <element signature="e#1544#1545#0" expanded="true" />
-                <element signature="e#1584#1585#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="164" column="39" lean-forward="false" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
-              <folding>
-                <element signature="e#10552#10553#0" expanded="true" />
-                <element signature="e#10628#10629#0" expanded="true" />
-                <element signature="e#11687#11688#0" expanded="true" />
-                <element signature="e#11724#11725#0" expanded="true" />
-                <element signature="e#12084#12085#0" expanded="true" />
-                <element signature="e#12124#12125#0" expanded="true" />
-                <element signature="e#12216#12217#0" expanded="true" />
-                <element signature="e#12282#12283#0" expanded="true" />
-                <element signature="e#12380#12381#0" expanded="true" />
-                <element signature="e#12443#12444#0" expanded="true" />
-                <element signature="e#12530#12531#0" expanded="true" />
-                <element signature="e#12564#12565#0" expanded="true" />
-                <element signature="e#12651#12652#0" expanded="true" />
-                <element signature="e#12682#12683#0" expanded="true" />
-                <element signature="e#12770#12771#0" expanded="true" />
-                <element signature="e#12809#12810#0" expanded="true" />
-                <element signature="e#12891#12892#0" expanded="true" />
-                <element signature="e#12928#12929#0" expanded="true" />
-                <element signature="e#13013#13014#0" expanded="true" />
-                <element signature="e#13051#13052#0" expanded="true" />
-                <element signature="e#13120#13121#0" expanded="true" />
-                <element signature="e#13154#13155#0" expanded="true" />
-                <element signature="e#13197#13198#0" expanded="true" />
-                <element signature="e#13233#13234#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AI_Exit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/AI_Exit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="37" column="100" lean-forward="true" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
+            <state relative-caret-position="555">
+              <caret line="37" column="100" lean-forward="false" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,51 +27,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case.java">
+      <file leaf-file-name="IA_Diamants.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/IA_Diamants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Case_Mur.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case_Mur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <element signature="e#565#566#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vertex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Vertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#942#943#0" expanded="true" />
-                <element signature="e#980#981#0" expanded="true" />
-                <element signature="e#1123#1124#0" expanded="true" />
-                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#225#226#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimerPrincipal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Controleurs/Timer/TimerPrincipal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -127,7 +48,7 @@
       <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Algorithmes/Dijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="1230">
               <caret line="91" column="8" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -170,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case.java" />
         <option value="$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/AI_Exit.java" />
         <option value="$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case_Mur.java" />
+        <option value="$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/IA_Diamants.java" />
       </list>
     </option>
   </component>
@@ -179,11 +101,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-240" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="838" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -242,14 +163,22 @@
               <item name="Carte" type="462c0819:PsiDirectoryNode" />
               <item name="Cases" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CryptOfTheJavaDancer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptOfTheJavaDancer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cryptofthejavadancer" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="IA" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +186,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -403,7 +333,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-240" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="838" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -414,13 +344,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28301886" sideWeight="0.5021299" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535253" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26110363" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.185836" sideWeight="0.62857145" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.185836" sideWeight="0.37142858" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25178826" sideWeight="0.6193078" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25178826" sideWeight="0.38069215" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -448,6 +378,115 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+          <folding>
+            <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="164" column="39" lean-forward="false" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
+          <folding>
+            <element signature="e#10552#10553#0" expanded="true" />
+            <element signature="e#10628#10629#0" expanded="true" />
+            <element signature="e#11687#11688#0" expanded="true" />
+            <element signature="e#11724#11725#0" expanded="true" />
+            <element signature="e#12084#12085#0" expanded="true" />
+            <element signature="e#12124#12125#0" expanded="true" />
+            <element signature="e#12216#12217#0" expanded="true" />
+            <element signature="e#12282#12283#0" expanded="true" />
+            <element signature="e#12380#12381#0" expanded="true" />
+            <element signature="e#12443#12444#0" expanded="true" />
+            <element signature="e#12530#12531#0" expanded="true" />
+            <element signature="e#12564#12565#0" expanded="true" />
+            <element signature="e#12651#12652#0" expanded="true" />
+            <element signature="e#12682#12683#0" expanded="true" />
+            <element signature="e#12770#12771#0" expanded="true" />
+            <element signature="e#12809#12810#0" expanded="true" />
+            <element signature="e#12891#12892#0" expanded="true" />
+            <element signature="e#12928#12929#0" expanded="true" />
+            <element signature="e#13013#13014#0" expanded="true" />
+            <element signature="e#13051#13052#0" expanded="true" />
+            <element signature="e#13120#13121#0" expanded="true" />
+            <element signature="e#13154#13155#0" expanded="true" />
+            <element signature="e#13197#13198#0" expanded="true" />
+            <element signature="e#13233#13234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/AI_Exit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="37" column="100" lean-forward="true" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1123#1124#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Controleurs/Timer/TimerPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Algorithmes/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="91" column="8" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3632#3633#0" expanded="true" />
+            <element signature="e#3659#3660#0" expanded="true" />
+            <element signature="e#3692#3693#0" expanded="true" />
+            <element signature="e#3727#3728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case_Mur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -619,10 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-          <folding>
-            <element signature="e#4355#4356#0" expanded="false" />
-            <element signature="e#4381#4382#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -630,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,10 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-          <folding>
-            <element signature="e#4355#4356#0" expanded="false" />
-            <element signature="e#4381#4382#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -694,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="188" column="0" lean-forward="false" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,13 +746,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Vertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
+        <state relative-caret-position="450">
           <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -749,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="2235">
           <caret line="164" column="39" lean-forward="false" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
           <folding>
             <element signature="e#10552#10553#0" expanded="true" />
@@ -782,7 +809,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Graphes/Algorithmes/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="1230">
           <caret line="91" column="8" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -794,19 +821,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/AI_Exit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="37" column="100" lean-forward="true" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="600">
           <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding />
         </state>
@@ -814,11 +831,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/Carte/Cases/Case_Mur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="e#565#566#0" expanded="true" />
             <element signature="e#601#602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/AI_Exit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="100" lean-forward="false" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cryptofthejavadancer/Model/IA/IA_Diamants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
           </folding>
         </state>
       </provider>
