@@ -15,7 +15,6 @@ public class AI_Exit extends IA {
 
     private Dijkstra algorithme;
     private boolean firstTime = true;
-    private Vertex current = null;
 
     public AI_Exit(Entite _entite){
         super(_entite);
