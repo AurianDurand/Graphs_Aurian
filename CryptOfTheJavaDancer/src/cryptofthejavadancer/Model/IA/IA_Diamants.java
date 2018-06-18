@@ -14,28 +14,34 @@ public class IA_Diamants extends IA {
 
     private Dijkstra algorithme;
     private boolean firstTime = true;
-    private ArrayList<Vertex> diamantsList;
 
     public IA_Diamants(Entite _entite) {
         super(_entite);
-        diamantsList = new ArrayList<>();
-        for(Objet obj : this.getMap().getListeObjet()){
-            if(obj.getType()== Type_Objet.Diamant){
-                diamantsList.add(this.getMap().getGraphe_simple().getVertex(obj.getCase().getLigne()+"/"+obj.getCase().getColonne()));
-            }
-        }
     }
 
     @Override
     public Type_Action action() {
-        Type_Action toDo;
+        Type_Action toDo = Type_Action.attendre;
         if(firstTime == true){
             firstTime = false;
             algorithme = new Dijkstra(this.getMap().getGraphe_simple());
-            algorithme.calcul(getMap().getGraphe_simple().getVertex(getMap().getDepart().toString()),getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
+            //algorithme.calcul(getMap().getGraphe_simple().getVertex(getMap().getDepart().toString()),getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
         }
+        //if cadence hasn't anything to do
         if(algorithme.getPath().isEmpty()){
-            toDo = Type_Action.sortir;
+            Vertex Cadence = getMap().getGraphe_simple().getVertex(super.getEntite().getCase().getLigne()+"/"+super.getEntite().getCase().getColonne());
+            //if cadence is on a diamant
+            if(closerDiamant()!=null){
+                if(closerDiamant()==Cadence){
+                    toDo = Type_Action.ramasser;
+                }
+                //if cadence is on the exit
+            }else if(Cadence==getMap().getGraphe_simple().getVertex(getMap().getSortie().toString())){
+                toDo = Type_Action.sortir;
+            }else {
+                algorithme.calcul(getMap().getGraphe_simple().getVertex(getMap().getDepart().toString()), getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
+                toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
+            }
         }else{
             toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(),algorithme.getPath().get(0).getCase().getColonne()));
         }
@@ -43,18 +49,28 @@ public class IA_Diamants extends IA {
     }
 
     private Vertex closerDiamant(){
-        algorithme = new Dijkstra(this.getMap().getGraphe_simple());
         int dist = 10000;
         Vertex closerOne = null;
         for(Objet obj : this.getMap().getListeObjet()){
             if(obj.getType()== Type_Objet.Diamant){
+
+                Vertex Cadence = getMap().getGraphe_simple().getVertex(super.getEntite().getCase().getLigne()+"/"+super.getEntite().getCase().getColonne());
+
                 Vertex start = getMap().getGraphe_simple().getVertex(getMap().getDepart().toString());
                 Vertex diamant = this.getMap().getGraphe_simple().getVertex(obj.getCase().getLigne()+"/"+obj.getCase().getColonne());
-                algorithme.calcul(start,diamant);
-                if(algorithme.getPath().size()<dist){
-                    dist = algorithme.getPath().size();
+                //algorithme.calcul(start,diamant);
+
+                if(algorithme.getDistance(diamant)<dist){
+                    dist = algorithme.getDistance(diamant);
                     closerOne = diamant;
                 }
+
+
+
+                /*if(algorithme.getPath().size()<dist){
+                    dist = algorithme.getPath().size();
+                    closerOne = diamant;
+                }*/
             }
         }
         return closerOne;

@@ -129,4 +129,8 @@ public class Dijkstra {
     public void destroyFirst(){
         this.path.remove(0);
     }
+
+    public Integer getDistance(Vertex v) {
+        return distance.get(v);
+    }
 }

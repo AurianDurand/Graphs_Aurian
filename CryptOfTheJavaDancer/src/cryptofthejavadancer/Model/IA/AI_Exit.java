@@ -18,10 +18,6 @@ public class AI_Exit extends IA {
 
     public AI_Exit(Entite _entite){
         super(_entite);
-        //graphe_simple = map.getGraphe_simple();
-        // needs a setter cause needs to be initialised after the generation of the map and the graph, at the same time
-        //algorithme = new Dijkstra(map.getGraphe_simple());
-        //algorithme.calcul(graphe_simple.getVertex(map.getDepart().toString()),graphe_simple.getVertex(map.getSortie().toString()));
     }
 
     public Type_Action action(){
