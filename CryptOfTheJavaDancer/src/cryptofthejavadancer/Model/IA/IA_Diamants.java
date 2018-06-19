@@ -35,10 +35,10 @@ public class IA_Diamants extends IA {
             algorithme.calcul(Cadence, getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
 
             if(closerDiamant()!=null){
-                //System.out.println("closer diamant : "+closerDiamant().getCoordinates());
                 //if cadence is on a diamant
                 if(closerDiamant()==Cadence){
                     toDo = Type_Action.ramasser;
+                    algorithme.clearPath();
                 }else{
                     algorithme.clearPath();
                     algorithme.calcul(Cadence,closerDiamant());
@@ -129,7 +129,6 @@ public class IA_Diamants extends IA {
                 toDo = Type_Action.interagir_droite;
             }
         }
-        //System.out.println("toDo : "+toDo);
         return toDo;
     }
 

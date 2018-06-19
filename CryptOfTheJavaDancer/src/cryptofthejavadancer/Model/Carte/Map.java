@@ -163,6 +163,7 @@ public class Map {
     }
     
     private void addEdgeAndLabelGraphSimple(Case c, Case c1) {
+        int infinite = Integer.MAX_VALUE+2;
         graphe_simple.addEdge(c.toString(), c1.toString());
         if(c1.getType()==Type_Case.Mur) {
             graphe_simple.setLabel(c.toString(), c1.toString(),2);
@@ -170,12 +171,12 @@ public class Map {
             //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
         }
         if(c1.getType()==Type_Case.MurDur) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),9);
+            graphe_simple.setLabel(c.toString(), c1.toString(),infinite);
             //System.out.println("    Neighbour of "+c.toString()+" is a MurDur");
             //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
         }
         if(c1.getType()==Type_Case.MurIndestructible) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),9);
+            graphe_simple.setLabel(c.toString(), c1.toString(),infinite);
             //System.out.println("    Neighbour of "+c.toString()+" is a MurIndestructible");
             //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
         }
