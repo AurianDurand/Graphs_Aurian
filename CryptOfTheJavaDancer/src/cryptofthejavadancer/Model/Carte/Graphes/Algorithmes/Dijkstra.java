@@ -133,4 +133,8 @@ public class Dijkstra {
     public Integer getDistance(Vertex v) {
         return distance.get(v);
     }
+
+    public void clearPath(){
+        path.clear();
+    }
 }

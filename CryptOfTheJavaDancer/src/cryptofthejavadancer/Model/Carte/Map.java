@@ -55,7 +55,7 @@ public class Map {
         
             //Il est possible de rajouter ICI des choses se réalisant juste après le chargement de la carte...
 
-
+            /*
             System.out.println("");
             System.out.println("Nombre de cases : "+this.getListeCase().size());
             System.out.println("Nombre d'entités : "+this.getListeEntite().size());
@@ -89,6 +89,8 @@ public class Map {
             //System.out.println("Type de la case à gauche de Cadence : "+this.getCase(5,15).getType());
             //System.out.println("");
 
+            */
+
             genererGrapheSimple();
             
             System.out.println("Graphe simple chargé.");
@@ -101,25 +103,25 @@ public class Map {
             
             //System.out.println(this.stringMatrixGrapheImprovedShovel());
             
-            Dijkstra shorterPath = new Dijkstra(graphe_simple);
+            //Dijkstra shorterPath = new Dijkstra(graphe_simple);
             
-            shorterPath.calcul(graphe_simple.getVertex(this.getDepart().toString()),graphe_simple.getVertex(this.getSortie().toString()));
+            //shorterPath.calcul(graphe_simple.getVertex(this.getDepart().toString()),graphe_simple.getVertex(this.getSortie().toString()));
 
-            System.out.println();
+            /*System.out.println();
             System.out.println("Dijkstra : ");
             for(Vertex v : shorterPath.getPath()) {
                 System.out.println(v.getCoordinates());
-            }
+            }*/
 
-            Astar aStar = new Astar(graphe_simple);
+            //Astar aStar = new Astar(graphe_simple);
 
-            aStar.calcul(graphe_simple.getVertex(this.getDepart().toString()),graphe_simple.getVertex(this.getSortie().toString()));
+            //aStar.calcul(graphe_simple.getVertex(this.getDepart().toString()),graphe_simple.getVertex(this.getSortie().toString()));
 
-            System.out.println();
+            /*System.out.println();
             System.out.println("Astar : ");
             for(Vertex v : aStar.getPath()){
                 System.out.println(v.getCoordinates());
-            }
+            }*/
 
             
     }

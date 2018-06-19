@@ -40,6 +40,7 @@ public class IA_Diamants extends IA {
                 if(closerDiamant()==Cadence){
                     toDo = Type_Action.ramasser;
                 }else{
+                    algorithme.clearPath();
                     algorithme.calcul(Cadence,closerDiamant());
                 }
 
@@ -50,7 +51,6 @@ public class IA_Diamants extends IA {
                 toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
             }
         }else{
-            System.out.println("Cadence : "+Cadence.getCoordinates());
             toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(),algorithme.getPath().get(0).getCase().getColonne()));
         }
         return toDo;
