@@ -2,6 +2,7 @@ package cryptofthejavadancer.Model.IA;
 
 import cryptofthejavadancer.Model.Carte.Cases.Case;
 import cryptofthejavadancer.Model.Carte.Cases.Type_Case;
+import cryptofthejavadancer.Model.Carte.Graphes.Algorithmes.Astar;
 import cryptofthejavadancer.Model.Carte.Graphes.Algorithmes.Dijkstra;
 import cryptofthejavadancer.Model.Carte.Graphes.Vertex;
 import cryptofthejavadancer.Model.Entites.Entite;
@@ -13,7 +14,9 @@ import java.util.ArrayList;
 public class IA_Diamants extends IA {
 
     private Dijkstra algorithme;
+    private Dijkstra improvedAlgorithme;
     private boolean firstTime = true;
+    private boolean tookImprovedShovel = false;
 
     public IA_Diamants(Entite _entite) {
         super(_entite);
@@ -26,32 +29,59 @@ public class IA_Diamants extends IA {
         if(firstTime == true){
             firstTime = false;
             algorithme = new Dijkstra(this.getMap().getGraphe_simple());
+            improvedAlgorithme = new Dijkstra(this.getMap().getGraphe_improved_shovel());
         }
 
         //if cadence hasn't anything to do
         if(algorithme.getPath().isEmpty()){
             //algorithme.calcul(getMap().getGraphe_simple().getVertex(getMap().getDepart().toString()), getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
             Cadence = getMap().getGraphe_simple().getVertex(super.getEntite().getCase().getLigne()+"/"+super.getEntite().getCase().getColonne());
-            algorithme.calcul(Cadence, getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
-
-            if(closerDiamant()!=null){
-                //if cadence is on a diamant
-                if(closerDiamant()==Cadence){
-                    toDo = Type_Action.ramasser;
-                    algorithme.clearPath();
-                }else{
-                    algorithme.clearPath();
-                    algorithme.calcul(Cadence,closerDiamant());
+            //if has not the improved shovel
+            if(!tookImprovedShovel) {
+                algorithme.calcul(Cadence, getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
+                //if there is a diamant left
+                if (closerDiamant() != null) {
+                    //if cadence is on a diamant
+                    if (closerDiamant() == Cadence) {
+                        toDo = Type_Action.ramasser;
+                        algorithme.clearPath();
+                    } else {
+                        //code the choice between with or without the improved shovel
+                        algorithme.clearPath();
+                        algorithme.calcul(Cadence, closerDiamant());
+                    }
+                //if cadence is on the exit
+                } else if (Cadence == getMap().getGraphe_simple().getVertex(getMap().getSortie().toString())) {
+                    toDo = Type_Action.sortir;
+                } else {
+                    toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
                 }
-
-            //if cadence is on the exit
-            }else if(Cadence==getMap().getGraphe_simple().getVertex(getMap().getSortie().toString())){
-                toDo = Type_Action.sortir;
+            //if ahs the improved shovel
             }else{
-                toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
+                improvedAlgorithme.calcul(Cadence, getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
+                //if there is a diamant left
+                if (closerDiamant() != null) {
+                    //if cadence is on a diamant
+                    if (closerDiamant() == Cadence) {
+                        toDo = Type_Action.ramasser;
+                        improvedAlgorithme.clearPath();
+                    } else {
+                        improvedAlgorithme.clearPath();
+                        improvedAlgorithme.calcul(Cadence, closerDiamant());
+                    }
+                    //if cadence is on the exit
+                } else if (Cadence == getMap().getGraphe_simple().getVertex(getMap().getSortie().toString())) {
+                    toDo = Type_Action.sortir;
+                } else {
+                    toDo = vertexToAction(getMap().getCase(improvedAlgorithme.getPath().get(0).getCase().getLigne(), improvedAlgorithme.getPath().get(0).getCase().getColonne()));
+                }
             }
         }else{
-            toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(),algorithme.getPath().get(0).getCase().getColonne()));
+            if(!tookImprovedShovel) {
+                toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
+            }else{
+                toDo = vertexToAction(getMap().getCase(improvedAlgorithme.getPath().get(0).getCase().getLigne(), improvedAlgorithme.getPath().get(0).getCase().getColonne()));
+            }
         }
         return toDo;
     }

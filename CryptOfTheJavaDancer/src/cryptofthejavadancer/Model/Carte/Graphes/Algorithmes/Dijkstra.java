@@ -94,8 +94,12 @@ public class Dijkstra {
     }
     
     private void relaxing(Vertex a, Vertex b) {
-        if(distance.get(b) > (distance.get(a) + graph.getLabel(a,b))) {
-            distance.put(b,distance.get(a) + graph.getLabel(a, b));
+        Integer labelAB = graph.getLabel(a,b);
+        if(labelAB == null){
+            return;
+        }
+        if(distance.get(b) > (distance.get(a) + labelAB)) {
+            distance.put(b,distance.get(a) + labelAB);
             predecessor.put(b, a);
         }
     }

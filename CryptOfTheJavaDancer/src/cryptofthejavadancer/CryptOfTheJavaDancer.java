@@ -31,6 +31,7 @@ public class CryptOfTheJavaDancer extends Application {
         Map niveau1 = new Map();
         try {
             niveau1.chargerFichier("level1.txt");
+            //niveau1.chargerFichier("level1Prof.txt");
             scene.start(niveau1);
         } catch (IOException ex) {
             System.out.println("Impossible de charger le niveau");

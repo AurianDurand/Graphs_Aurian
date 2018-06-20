@@ -51,78 +51,12 @@ public class Map {
         Parseur parseur = new Parseur(adresseFichier,this);
         parseur.lecture();
         System.out.println("Niveau chargé.");
-       
-        
-            //Il est possible de rajouter ICI des choses se réalisant juste après le chargement de la carte...
-
-            /*
-            System.out.println("");
-            System.out.println("Nombre de cases : "+this.getListeCase().size());
-            System.out.println("Nombre d'entités : "+this.getListeEntite().size());
-            System.out.println("Nombre d'objets : "+this.getListeObjet().size());
-            System.out.println("");
-            int numberDiamant = 0;
-            for(int i = 0;i<this.getListeObjet().size();i++)
-            {
-                System.out.println("Objet numéro "+(i+1)+" : "+this.getListeObjet().get(i));
-                if(this.getListeObjet().get(i).getType()==Type_Objet.Diamant)
-                {
-                    numberDiamant++;
-                }
-            }
-            System.out.println("");
-            System.out.println("Nombre de Diamant : "+numberDiamant);
-            System.out.println("");
-            System.out.println("Coordonnées de la sortie : ");
-            System.out.println("    Ligne : "+this.getSortie().getLigne());
-            System.out.println("    Colonne : "+this.getSortie().getColonne());
-            System.out.println("");
-            for(int j = 0;j<this.getListeEntite().size();j++)
-            {
-                System.out.println("Objet numéro "+(j+1)+" : "+this.getListeEntite().get(j));
-            }
-            System.out.println("");
-            System.out.println("Coordonnées de Cadence : ");
-            System.out.println("    Ligne : "+this.getJoueur().getCase().getLigne());
-            System.out.println("    Colonne : "+this.getJoueur().getCase().getColonne());
-            System.out.println("");
-            //System.out.println("Type de la case à gauche de Cadence : "+this.getCase(5,15).getType());
-            //System.out.println("");
-
-            */
 
             genererGrapheSimple();
-            
-            System.out.println("Graphe simple chargé.");
-            
-            //genererGrapheImprovedShovel();
-            
-            //System.out.println("Graphe pelle améliorée chargé.");
-            
-            //System.out.println(this.stringMatrixGrapheSimple());
-            
-            //System.out.println(this.stringMatrixGrapheImprovedShovel());
-            
-            //Dijkstra shorterPath = new Dijkstra(graphe_simple);
-            
-            //shorterPath.calcul(graphe_simple.getVertex(this.getDepart().toString()),graphe_simple.getVertex(this.getSortie().toString()));
+            System.out.println("Simple shovel graph created");
 
-            /*System.out.println();
-            System.out.println("Dijkstra : ");
-            for(Vertex v : shorterPath.getPath()) {
-                System.out.println(v.getCoordinates());
-            }*/
-
-            //Astar aStar = new Astar(graphe_simple);
-
-            //aStar.calcul(graphe_simple.getVertex(this.getDepart().toString()),graphe_simple.getVertex(this.getSortie().toString()));
-
-            /*System.out.println();
-            System.out.println("Astar : ");
-            for(Vertex v : aStar.getPath()){
-                System.out.println(v.getCoordinates());
-            }*/
-
+            genererGrapheImprovedShovel();
+            System.out.println("Improved shovel graph created");
             
     }
     
@@ -131,31 +65,25 @@ public class Map {
         for(Case c : listeCase) {
             graphe_simple.addVertex(c.toString(),c,c.getLigne(),c.getColonne());
         }
-        
         for(Case c : listeCase) {
-            //System.out.println("Case : "+c.toString()+" : "+c.getType());
             for(Case c1 : listeCase) {
                 if((Math.abs(c.getLigne()-c1.getLigne())==0)&&
                         (Math.abs(c.getColonne()-c1.getColonne())==1)) {
                     addEdgeAndLabelGraphSimple(c,c1);
-                    //System.out.println("        It's coordinates are "+c1.toString());
                 }
                 if(((Math.abs(c.getLigne()-c1.getLigne())==0)&&
                         (Math.abs(c.getColonne()-c1.getColonne())==-1))
                         &&(Math.abs(c.getColonne()-c1.getColonne())>=0)) {
                     addEdgeAndLabelGraphSimple(c,c1);
-                    //System.out.println("        It's coordinates are "+c1.toString());
                 }
                 if((Math.abs(c.getLigne()-c1.getLigne())==1)&&
                         (Math.abs(c.getColonne()-c1.getColonne())==0)) {
                     addEdgeAndLabelGraphSimple(c,c1);
-                    //System.out.println("        It's coordinates are "+c1.toString());
                 }
                 if(((Math.abs(c.getLigne()-c1.getLigne())==-1)&&
                         (Math.abs(c.getColonne()-c1.getColonne())==0))
                         &&(Math.abs(c.getLigne()-c1.getLigne())>=0)) {
                     addEdgeAndLabelGraphSimple(c,c1);
-                    //System.out.println("        It's coordinates are "+c1.toString());
                 }
                 
             }
@@ -163,28 +91,13 @@ public class Map {
     }
     
     private void addEdgeAndLabelGraphSimple(Case c, Case c1) {
-        int infinite = Integer.MAX_VALUE+2;
         graphe_simple.addEdge(c.toString(), c1.toString());
         if(c1.getType()==Type_Case.Mur) {
             graphe_simple.setLabel(c.toString(), c1.toString(),2);
-            //System.out.println("    Neighbour of "+c.toString()+" is a Mur");
-            //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
-        }
-        if(c1.getType()==Type_Case.MurDur) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),infinite);
-            //System.out.println("    Neighbour of "+c.toString()+" is a MurDur");
-            //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
-        }
-        if(c1.getType()==Type_Case.MurIndestructible) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),infinite);
-            //System.out.println("    Neighbour of "+c.toString()+" is a MurIndestructible");
-            //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
         }
         if(c1.getType()==Type_Case.Sol) {
             graphe_simple.setLabel(c.toString(), c1.toString(),1);
-            //System.out.println("    Neighbour of "+c.toString()+" is a Sol");
-            //System.out.println("    "+graphe_simple.getLabel(c.toString(), c1.toString()));
-        }    
+        }
     }
     
     private void genererGrapheImprovedShovel() {
@@ -192,15 +105,40 @@ public class Map {
         for(Case c : listeCase) {
             graphe_improved_shovel.addVertex(c.toString(),c,c.getLigne(),c.getColonne());
         }
-        
-        
         for(Case c : listeCase) {
             for(Case c1 : listeCase) {
-                if(Math.abs((c.getLigne()-c1.getLigne())+(c.getColonne()-c1.getColonne()))==1) {
-                    graphe_improved_shovel.addEdge(c.toString(), c1.toString());
-                    graphe_improved_shovel.setLabel(c.toString(), c1.toString(),1);
+                if((Math.abs(c.getLigne()-c1.getLigne())==0)&&
+                        (Math.abs(c.getColonne()-c1.getColonne())==1)) {
+                    addEdgeAndLabelGraphImprovedShovel(c,c1);
+                }
+                if(((Math.abs(c.getLigne()-c1.getLigne())==0)&&
+                        (Math.abs(c.getColonne()-c1.getColonne())==-1))
+                        &&(Math.abs(c.getColonne()-c1.getColonne())>=0)) {
+                    addEdgeAndLabelGraphImprovedShovel(c,c1);
+                }
+                if((Math.abs(c.getLigne()-c1.getLigne())==1)&&
+                        (Math.abs(c.getColonne()-c1.getColonne())==0)) {
+                    addEdgeAndLabelGraphImprovedShovel(c,c1);
+                }
+                if(((Math.abs(c.getLigne()-c1.getLigne())==-1)&&
+                        (Math.abs(c.getColonne()-c1.getColonne())==0))
+                        &&(Math.abs(c.getLigne()-c1.getLigne())>=0)) {
+                    addEdgeAndLabelGraphImprovedShovel(c,c1);
                 }
             }
+        }
+    }
+
+    private void addEdgeAndLabelGraphImprovedShovel(Case c, Case c1) {
+        graphe_simple.addEdge(c.toString(), c1.toString());
+        if(c1.getType()==Type_Case.Mur) {
+            graphe_simple.setLabel(c.toString(), c1.toString(),2);
+        }
+        if(c1.getType()==Type_Case.MurDur) {
+            graphe_simple.setLabel(c.toString(), c1.toString(),2);
+        }
+        if(c1.getType()==Type_Case.Sol) {
+            graphe_simple.setLabel(c.toString(), c1.toString(),1);
         }
     }
     
@@ -326,6 +264,10 @@ public class Map {
     
     public Graph getGraphe_simple() {
         return graphe_simple;
+    }
+
+    public Graph getGraphe_improved_shovel(){
+        return graphe_improved_shovel;
     }
     
 //------------------------------------------------------------------------------
