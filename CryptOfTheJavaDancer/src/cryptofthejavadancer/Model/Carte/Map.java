@@ -57,7 +57,6 @@ public class Map {
 
             genererGrapheImprovedShovel();
             System.out.println("Improved shovel graph created");
-            
     }
     
     private void genererGrapheSimple() {
@@ -130,15 +129,18 @@ public class Map {
     }
 
     private void addEdgeAndLabelGraphImprovedShovel(Case c, Case c1) {
-        graphe_simple.addEdge(c.toString(), c1.toString());
+        graphe_improved_shovel.addEdge(c.toString(), c1.toString());
         if(c1.getType()==Type_Case.Mur) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),2);
+            graphe_improved_shovel.setLabel(c.toString(), c1.toString(),2);
+            System.out.println("mur");
         }
         if(c1.getType()==Type_Case.MurDur) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),2);
+            graphe_improved_shovel.setLabel(c.toString(), c1.toString(),2);
+            System.out.println("mur dur");
         }
         if(c1.getType()==Type_Case.Sol) {
-            graphe_simple.setLabel(c.toString(), c1.toString(),1);
+            graphe_improved_shovel.setLabel(c.toString(), c1.toString(),1);
+            System.out.println("sol");
         }
     }
     

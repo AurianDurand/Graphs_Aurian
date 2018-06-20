@@ -16,7 +16,8 @@ public class IA_Diamants extends IA {
     private Dijkstra algorithme;
     private Dijkstra improvedAlgorithme;
     private boolean firstTime = true;
-    private boolean tookImprovedShovel = false;
+    private boolean mustTookImprovedShovel = false;
+    private Vertex improvedShovelPos;
 
     public IA_Diamants(Entite _entite) {
         super(_entite);
@@ -30,15 +31,23 @@ public class IA_Diamants extends IA {
             firstTime = false;
             algorithme = new Dijkstra(this.getMap().getGraphe_simple());
             improvedAlgorithme = new Dijkstra(this.getMap().getGraphe_improved_shovel());
+            for(Objet obj : this.getMap().getListeObjet()){
+                if(obj.getType()== Type_Objet.Pelle){
+                    improvedShovelPos = this.getMap().getGraphe_simple().getVertex(obj.getCase().getLigne()+"/"+obj.getCase().getColonne());
+                }
+            }
         }
-
         //if cadence hasn't anything to do
-        if(algorithme.getPath().isEmpty()){
+        if((algorithme.getPath().isEmpty())&&(improvedAlgorithme.getPath().isEmpty())){
             //algorithme.calcul(getMap().getGraphe_simple().getVertex(getMap().getDepart().toString()), getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
             Cadence = getMap().getGraphe_simple().getVertex(super.getEntite().getCase().getLigne()+"/"+super.getEntite().getCase().getColonne());
             //if has not the improved shovel
-            if(!tookImprovedShovel) {
+            if(getMap().getJoueur().getPelle() == false) {
                 algorithme.calcul(Cadence, getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
+                //if (Cadence.getCoordinates() == improvedShovelPos.getCoordinates()) {
+                if(mustTookImprovedShovel == true){
+                    toDo = Type_Action.ramasser;
+                }
                 //if there is a diamant left
                 if (closerDiamant() != null) {
                     //if cadence is on a diamant
@@ -47,27 +56,44 @@ public class IA_Diamants extends IA {
                         algorithme.clearPath();
                     } else {
                         //code the choice between with or without the improved shovel
+                        //if(algorithme.calcul(Cadence,);)
                         algorithme.clearPath();
                         algorithme.calcul(Cadence, closerDiamant());
+                        int sizeGoToDiamant = algorithme.getPath().size();
+                        algorithme.clearPath();
+                        algorithme.calcul(Cadence, improvedShovelPos);
+                        int sizeGoToImprovedSHovel = algorithme.getPath().size();
+                        algorithme.clearPath();
+                        improvedAlgorithme.calcul(improvedShovelPos, closerDiamant());
+                        int sizeShovelToDiamant = improvedAlgorithme.getPath().size();
+                        improvedAlgorithme.clearPath();
+                        if (sizeGoToDiamant > sizeGoToImprovedSHovel + sizeShovelToDiamant) {
+                            algorithme.calcul(Cadence, improvedShovelPos);
+                            mustTookImprovedShovel = true;
+                        } else {
+                            algorithme.calcul(Cadence, closerDiamant());
+                        }
+
                     }
-                //if cadence is on the exit
+                    //if cadence is on the exit
                 } else if (Cadence == getMap().getGraphe_simple().getVertex(getMap().getSortie().toString())) {
                     toDo = Type_Action.sortir;
                 } else {
                     toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
                 }
-            //if ahs the improved shovel
+            //if has the improved shovel
             }else{
                 improvedAlgorithme.calcul(Cadence, getMap().getGraphe_simple().getVertex(getMap().getSortie().toString()));
                 //if there is a diamant left
                 if (closerDiamant() != null) {
                     //if cadence is on a diamant
-                    if (closerDiamant() == Cadence) {
+                    if (improvedCloserDiamant() == Cadence) {
                         toDo = Type_Action.ramasser;
                         improvedAlgorithme.clearPath();
                     } else {
                         improvedAlgorithme.clearPath();
-                        improvedAlgorithme.calcul(Cadence, closerDiamant());
+                        improvedAlgorithme.calcul(Cadence, improvedCloserDiamant());
+                        System.out.println("path.size : "+improvedAlgorithme.getPath().size());
                     }
                     //if cadence is on the exit
                 } else if (Cadence == getMap().getGraphe_simple().getVertex(getMap().getSortie().toString())) {
@@ -77,9 +103,10 @@ public class IA_Diamants extends IA {
                 }
             }
         }else{
-            if(!tookImprovedShovel) {
+            if(getMap().getJoueur().getPelle() == false) {
                 toDo = vertexToAction(getMap().getCase(algorithme.getPath().get(0).getCase().getLigne(), algorithme.getPath().get(0).getCase().getColonne()));
             }else{
+                System.out.println("coucou");
                 toDo = vertexToAction(getMap().getCase(improvedAlgorithme.getPath().get(0).getCase().getLigne(), improvedAlgorithme.getPath().get(0).getCase().getColonne()));
             }
         }
@@ -94,6 +121,23 @@ public class IA_Diamants extends IA {
                 Vertex diamant = this.getMap().getGraphe_simple().getVertex(obj.getCase().getLigne()+"/"+obj.getCase().getColonne());
                 if(algorithme.getDistance(diamant)<dist){
                     dist = algorithme.getDistance(diamant);
+                    closerOne = diamant;
+                }
+            }
+        }
+        return closerOne;
+    }
+
+    private Vertex improvedCloserDiamant(){
+        int dist = 10000;
+        Vertex closerOne = null;
+        for(Objet obj : this.getMap().getListeObjet()){
+            if(obj.getType()== Type_Objet.Diamant){
+                Vertex diamant = this.getMap().getGraphe_improved_shovel().getVertex(obj.getCase().getLigne()+"/"+obj.getCase().getColonne());
+                System.out.println("diamant : "+diamant.getCoordinates());
+                System.out.println("dist :"+improvedAlgorithme.getDistance(diamant));
+                if(improvedAlgorithme.getDistance(diamant)<dist){
+                    dist = improvedAlgorithme.getDistance(diamant);
                     closerOne = diamant;
                 }
             }
