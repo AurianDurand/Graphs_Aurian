@@ -13,6 +13,8 @@ import cryptofthejavadancer.Model.Entites.Entite_Cadence;
 import cryptofthejavadancer.Model.Entites.Type_Entite;
 import cryptofthejavadancer.Model.Objet.Objet;
 import cryptofthejavadancer.Model.Objet.Type_Objet;
+
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,6 +59,10 @@ public class Map {
 
             genererGrapheImprovedShovel();
             System.out.println("Improved shovel graph created");
+
+            Dijkstra test = new Dijkstra(graphe_improved_shovel);
+
+            test.calcul(graphe_improved_shovel.getVertex(this.getJoueur().getCase().toString()),graphe_improved_shovel.getVertex(this.getSortie().toString()));
     }
     
     private void genererGrapheSimple() {
@@ -132,15 +138,12 @@ public class Map {
         graphe_improved_shovel.addEdge(c.toString(), c1.toString());
         if(c1.getType()==Type_Case.Mur) {
             graphe_improved_shovel.setLabel(c.toString(), c1.toString(),2);
-            System.out.println("mur");
         }
         if(c1.getType()==Type_Case.MurDur) {
             graphe_improved_shovel.setLabel(c.toString(), c1.toString(),2);
-            System.out.println("mur dur");
         }
         if(c1.getType()==Type_Case.Sol) {
             graphe_improved_shovel.setLabel(c.toString(), c1.toString(),1);
-            System.out.println("sol");
         }
     }
     

@@ -42,7 +42,7 @@ public class Dijkstra {
         for(Vertex v : graph.getVertices()) {
             seen.put(v, Boolean.FALSE);
             predecessor.put(v,null);
-            distance.put(v, Integer.MAX_VALUE-2);
+            distance.put(v, Integer.MAX_VALUE);
         }
         distance.put(start,0);
     }
@@ -65,15 +65,15 @@ public class Dijkstra {
         this.start = _start;
         this.end = _end;
         initialisation();
-        Vertex a;
-        while(allVerticiesVisited() == false) {
-            a = minDistVertexNotSeen();
+        Vertex a = minDistVertexNotSeen();
+        while(a != null) {
             seen.put(a, Boolean.TRUE);
             for(Vertex b : a.getNeighbours()) {
                 //System.out.println("Neighbour of "+a.getCoordinates()+": "+b.getCoordinates());
                 //System.out.println("Dist between a and b : "+graph.getLabel(a,b));
                 relaxing(a,b);
             }
+            a = minDistVertexNotSeen();
         }
         findShorterPath();
     }
